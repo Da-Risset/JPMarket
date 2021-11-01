@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.util.Log;
 
 public class RegisterActivity extends AppCompatActivity {
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
 
     Button signUp;
     EditText nama,email,password;
@@ -36,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                Log.d(LOG_TAG, "Button clicked!");
             }
         });
     }
