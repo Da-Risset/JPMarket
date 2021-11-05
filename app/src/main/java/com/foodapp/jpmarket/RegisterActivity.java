@@ -12,8 +12,7 @@ import android.widget.TextView;
 import android.util.Log;
 
 public class RegisterActivity extends AppCompatActivity {
-    private static final String LOG_TAG =
-            MainActivity.class.getSimpleName();
+
 
     Button signUp;
     EditText nama,email,password;
@@ -24,23 +23,17 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        signIn = findViewById(R.id.reg_btn);
+        signUp = findViewById(R.id.reg_btn);
         email = findViewById(R.id.email_reg);
         password = findViewById(R.id.password_reg);
         signIn = findViewById(R.id.sign_in);
 
-        signIn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
-            }
-        });
 
-        signUp.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Log.d(LOG_TAG, "Button clicked!");
-            }
-        });
+
+    }
+
+    public void masuk(View view) {
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
     }
 }
