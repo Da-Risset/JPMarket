@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:padding="14dp"
         android:text="Sign Up"
+        android:onClick="masuk"
         android:textAllCaps="false"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
         app:layout_constraintVertical_bias=".2" />
 
     <TextView

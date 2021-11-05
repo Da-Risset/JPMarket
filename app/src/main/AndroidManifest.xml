@@ -11,7 +11,11 @@
         android:theme="@style/Theme.JPMarket">
         <activity
             android:name=".LoginActivity"
+            android:parentActivityName=".RegisterActivity"
             android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,8 +26,10 @@
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="true">
-
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity"/>
         </activity>
     </application>
 
