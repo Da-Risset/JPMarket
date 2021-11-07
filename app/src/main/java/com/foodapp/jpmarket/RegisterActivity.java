@@ -14,25 +14,19 @@ import android.util.Log;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    Button signUp;
-    EditText nama,email,password;
-    TextView signIn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        signUp = findViewById(R.id.reg_btn);
-        email = findViewById(R.id.email_reg);
-        password = findViewById(R.id.password_reg);
-        signIn = findViewById(R.id.sign_in);
-
-
-
     }
 
-    public void masuk(View view) {
+    public void signUp(View view) {
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void signIn(View view) {
         Intent intent = new Intent(this,LoginActivity.class);
         startActivity(intent);
     }

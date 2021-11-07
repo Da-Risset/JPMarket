@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:padding="14dp"
         android:text="Sign In"
-        android:onClick="login"
+        android:onClick="signIn"
         android:textAllCaps="false"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,18 +74,18 @@
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
         app:layout_constraintVertical_bias=".2" />
 
-    <Button
+    <TextView
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="signUp"
         android:text="Sign Up"
-        android:onClick="daftar"
         android:textColor="@color/purple_700"
-        app:layout_constraintHorizontal_bias="0"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
