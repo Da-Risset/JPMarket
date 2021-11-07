@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">JP Market</string>
-    
-    <string-array name="jajanan_pasar">
+    <string name="judul">Judul</string>
+    <string name="deskripsi">Deskripsi</string>
+
+    <string-array name="judul">
         <item>Klepon</item>
         <item>Kue Putu</item>
         <item>Lemper</item>
@@ -12,13 +14,13 @@
     </string-array>
     
     <string-array name="deskripsi">
-        <item>Klepon terbuat dari tepung beras ketan yang dibentuk seperti bola-bola kecil dan diisi dengan gula merah lalu direbus dalam air mendidih.</item>
-        <item> Kue putu terbuat dari butiran kasar tepung beras, parutan kelapa yang dimasak di dalam tabung bambu kecil dan diisi dengan gula merah.</item>
-        <item>Lemper merupakan camilan ketan beras dengan isi ayam atau abon, yang dibalut dengan daun pisang.</item>
-        <item>Lumpia adalah jajanan yang terdiri dari kulit dan isian. Gorengan satu ini biasanya memiliki isian rebung, dan memiliki dua varian yaitu lumpia basah dan lumpia kering.</item>
-        <item>Apem merupakan jenis jajan pasar yang terbuat dari tepung beras dan campuran telur, santan, gula dan tape serta sedikit garam. Adonan apem dibakar atau dikukus dan memilki rasa manis khas tape.</item>
-        <item>Nagasari terbuat dari tepung beras, tepung sagu, santan, dan gula yang diisi pisang. Pisang yang biasa digunakan sebagai isi adalah pisang jenis pisang raja. Kue ini biasanya dibalut dengan daun pisang lalu dikukus.</item>
-        <item>Getuk yang digiling halus dengan gula pasir, dibubuhi pewarna makanan dan vanili, dan selanjutnya dicetak dengan bentuk memanjang dan dipotong kecil-kecil.</item>
+        <item>Klepon terbuat dari tepung beras ketan yang .</item>
+        <item> Kue putu terbuat dari butiran kasar tepung beras.</item>
+        <item>Lemper merupakan camilan ketan beras.</item>
+        <item>Lumpia adalah jajanan dari kulit dan isian.</item>
+        <item>Apem merupakan jajan dari tepung beras.</item>
+        <item>Nagasari dibalut daun pisang dikukus.</item>
+        <item>Getuk yang digiling dengan gula pasir.</item>
 
     </string-array>
 </resources>

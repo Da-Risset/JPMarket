@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     String s1[], s2[];
-    int images[]= {};
+    int images[]= {R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        s1 = getResources().getStringArray(R.array.jajanan_pasar);
+        s1 = getResources().getStringArray(R.array.judul);
         s2 = getResources().getStringArray(R.array.deskripsi);
 
-        PopRecAdapter myadapter = new PopRecAdapter(this, s1, s2, images);
-        recyclerView.setAdapter(myadapter);
+        PopRecAdapter myAdapter = new PopRecAdapter(this, s1, s2, images);
+
+        recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
     }
 }

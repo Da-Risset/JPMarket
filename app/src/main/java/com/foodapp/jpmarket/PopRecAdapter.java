@@ -26,7 +26,7 @@ public class PopRecAdapter extends RecyclerView.Adapter<PopRecAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row,parent,false);
+        View view = inflater.inflate(R.layout.my_row, parent,false);
         return new MyViewHolder(view);
     }
 
@@ -40,7 +40,7 @@ public class PopRecAdapter extends RecyclerView.Adapter<PopRecAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data1.length;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -50,8 +50,8 @@ public class PopRecAdapter extends RecyclerView.Adapter<PopRecAdapter.MyViewHold
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            myText1 = itemView.findViewById(R.id.jajanan_pasar_txt);
-            myText2 = itemView.findViewById(R.id.deskripsi_txt);
+            myText1 = itemView.findViewById(R.id.judul);
+            myText2 = itemView.findViewById(R.id.deskripsi);
             myImage = itemView.findViewById(R.id.myimageView);
 
         }
