@@ -24,7 +24,8 @@
         android:background="@drawable/edittext_background"
         android:elevation="3dp"
         android:padding="13dp"
-        android:text="Email"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:textColor="#888887"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +41,8 @@
         android:background="@drawable/edittext_background"
         android:elevation="3dp"
         android:padding="13dp"
-        android:text="Password"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:textColor="#888887"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,16 +65,16 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+git         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't Have An Account?"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:layout_constraintVertical_bias=".2" />
+        app:layout_constraintVertical_bias="0.198" />
 
     <TextView
         android:id="@+id/sign_up"

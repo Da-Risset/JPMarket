@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "829993535511",
+    "project_id": "jp-market-54fb7",
+    "storage_bucket": "jp-market-54fb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829993535511:android:7243b19045c2b0a79df452",
+        "android_client_info": {
+          "package_name": "com.foodapp.jpmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829993535511-l39q3q2c5j16gqfp9mh6aqb1tqjlc8fd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Co8XNh_rvnpQGZdyDslp8ASAn3OspTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829993535511-l39q3q2c5j16gqfp9mh6aqb1tqjlc8fd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
