@@ -1,95 +1,99 @@
 package com.foodapp.jpmarket;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.util.Log;
 import android.widget.Toast;
 
+import com.foodapp.jpmarket.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText editEmail, editPassword;
-    private Button btnLogin, btnRegister;
-    private ProgressDialog progressDialog;
-    private FirebaseAuth mAuth;
+    Button signIn;
+    EditText email,password;
+    TextView signUp;
+
+    FirebaseAuth auth;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        auth = FirebaseAuth.getInstance();
 
-        editEmail = findViewById(R.id.email_login);
-        editPassword = findViewById(R.id.password_login);
-        btnLogin = findViewById(R.id.login_btn);
-//        btnRegister = findViewById(R.id.btn_reg);
+        progressBar = findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.GONE);
 
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        progressDialog = new ProgressDialog(LoginActivity.this);
-        progressDialog.setTitle("Loading");
-        progressDialog.setMessage("Please Wait!");
-        progressDialog.setCancelable(false);
+        signIn = findViewById(R.id.login_btn);
+        email = findViewById(R.id.email_login);
+        password = findViewById(R.id.password_login);
+        signUp = findViewById(R.id.sign_up);
 
-        btnLogin.setOnClickListener(v ->{
-            if(editEmail.getText().length()>0 && editPassword.getText().length()>0){
-                login(editEmail.getText().toString(), editPassword.getText().toString());
-            }else {
-                Toast.makeText(getApplicationContext(), "Please fill in all data!", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-    }
-
-    private void login(String email, String password){
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful() && task.getResult()!=null){
-                    if (task.getResult().getUser()!=null){
-                        signIn();
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
-                }
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                loginUser();
+                progressBar.setVisibility(View.VISIBLE);
+
+            }
+        });
+
     }
 
+    private void loginUser() {
 
-    public void signUp(View view) {
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        startActivity(intent);
-    }
+        String userEmail = email.getText().toString();
+        String userPassword = password.getText().toString();
 
-    public void signIn() {
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            signIn();
+        if (TextUtils.isEmpty(userEmail)){
+            Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+
+        if (TextUtils.isEmpty(userPassword)){
+            Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (userPassword.length() < 6){
+            Toast.makeText(this, "Password Length must be greater then 6 letter", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        //Login User
+        auth.signInWithEmailAndPassword(userEmail,userPassword)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()){
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        }else {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(LoginActivity.this, "Error"+task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
