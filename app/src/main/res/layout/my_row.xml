@@ -16,6 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:cardCornerRadius="16dp"
+
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,12 +25,13 @@
 
             <ImageView
                 android:id="@+id/myimageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/klepon" />
 
             <TextView
                 android:id="@+id/judul"

@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    //Autentikasi
     private void createUser() {
 
         String userName = name.getText().toString();
@@ -104,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         }
                         else {
                             progressBar.setVisibility(View.GONE);
