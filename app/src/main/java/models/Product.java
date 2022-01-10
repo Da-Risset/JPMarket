@@ -2,10 +2,6 @@ package models;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Codemaker on 12/06/2021.
- */
-
 public class Product {
     @SerializedName("title")
     private String title;
