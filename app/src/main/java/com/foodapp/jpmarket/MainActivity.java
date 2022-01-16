@@ -37,13 +37,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     ProgressDialog progressDoalog;
 
-//    RecyclerView recyclerView;
-//    BottomNavigationView bottomNavigationView;
 
     String s1[], s2[];
     int images[]= {R.mipmap.klepon, R.mipmap.kue_putu, R.mipmap.lemperr, R.mipmap.lumpiaa, R.mipmap.apem, R.mipmap.nagasari, R.mipmap.getuk_lindri};
 
-//    @SuppressLint("SetTextI18n");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,15 +63,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         });
 
-//        recyclerView = findViewById(R.id.recyclerView);
-//
-//        s1 = getResources().getStringArray(R.array.judul);
-//        s2 = getResources().getStringArray(R.array.deskripsi);
-//
-//        PopRecAdapter myAdapter = new PopRecAdapter(this, s1, s2, images);
-//
-//        recyclerView.setAdapter(myAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         progressDoalog = new ProgressDialog(MainActivity.this);
         progressDoalog.setMessage("Loading....");
